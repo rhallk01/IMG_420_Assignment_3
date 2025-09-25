@@ -9,8 +9,7 @@ altered to act as a tight swarm of bees that move back and forth across the scre
 queen bee, the target.
 
 ## 2. Demonstrate this flocking algorithm by integrating it with your game from previous assignments or developing a new game:
-The bee boids are integrated into the game from assignment 1 as an obstacle to the player jumping by 
-flying back and forth across the top of the screen in the middle portion of the level.
+The bee boids are integrated into the game from assignment 1 as an obstacle to the player jumping. The bees do this by flying back and forth across the top of the screen in the middle portion of the level as collision shapes.
 
 ## 3. Use of flocking to improve design, feel, and experience:
 Flocking is used in the game to act as an additional obstacle to jumping across chasms and over enemies 
