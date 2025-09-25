@@ -4,10 +4,15 @@ using System.Collections.Generic;
 public partial class Boid : CharacterBody2D
 {
 	// Adjustable in the Inspector
+	// The settings initially keep the bee boids in a more bee like formation
+	// Slowed down max speed
 	[Export] public float MaxSpeed = 80f;
+	// Increased seperation weight
 	[Export] public float SeparationWeight = 5.0f;
 	[Export] public float AlignmentWeight = 1.2f;
+	// Increased cohesion weight
 	[Export] public float CohesionWeight = 2.5f;
+	// Increased follow weight and radius significantly
 	[Export] public float FollowWeight = 70.0f;
 	[Export] public float FollowRadius = 60.0f;
 	private List<Boid> _neighbors = new();
@@ -20,6 +25,7 @@ public partial class Boid : CharacterBody2D
 		_detectionArea = GetNode<Area2D>("DetectionArea");
 		_detectionArea.BodyEntered += OnBodyEntered;
 		_detectionArea.BodyExited += OnBodyExited;
+		// made the bee boids into sprites
 		_sprite = GetNode<Sprite2D>("Sprite2D");
 		
 		var viewportRect = GetViewportRect();
@@ -81,12 +87,13 @@ public partial class Boid : CharacterBody2D
 	private Vector2 Separation()
 	{
 		if (_neighbors.Count == 0) return Vector2.Zero;
-
-		float desiredSeparation = 40f; // tweak in pixels
+        // used desired seperation to adjust bees distance from each other
+		float desiredSeparation = 40f; 
 		Vector2 steer = Vector2.Zero;
 		foreach (var neighbor in _neighbors)
 		{
 			float d = Position.DistanceTo(neighbor.Position);
+			// steers bees back towards desired seperation
 			if (d < desiredSeparation && d > 0f)
 			{
 				Vector2 diff = (Position - neighbor.Position).Normalized();
