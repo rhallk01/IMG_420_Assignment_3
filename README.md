@@ -4,8 +4,8 @@ forth around the middle of the screen. Colliding with them will not kill the pla
 mess up jumps, so watch out!
 
 ## 1. Fully implement the flocking algorithm as described by Craig Reynolds in his Boids application:
-The code within this game contains altered the boids code provided by Professor Amresh, which has been
-changed to act as a more tight swarm of bees that move back and forth across the screen led by a 
+The code within this game contains the boids code provided by Professor Amresh, which has been
+altered to act as a tight swarm of bees that move back and forth across the screen led by a 
 queen bee, the target.
 
 ## 2. Demonstrate this flocking algorithm by integrating it with your game from previous assignments or developing a new game:
