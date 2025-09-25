@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cigm31qipls0l"]
+
+[ext_resource type="Script" uid="uid://2ch0a6c00n21" path="res://scripts/Target.cs" id="1_n13nt"]
+[ext_resource type="Texture2D" uid="uid://ckrf17wwb8mmb" path="res://assets/textures/bee_sprite.png" id="2_ligy1"]
+
+[node name="Target" type="RigidBody2D"]
+position = Vector2(2, 9)
+script = ExtResource("1_n13nt")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-7.000004, -2.0000038)
+scale = Vector2(0.36206895, 0.425)
+polygon = PackedVector2Array(-25, -19, -1, -1, 33, -22, -1, -41)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-7.051147, -1.3399383)
+scale = Vector2(0.44318175, 0.4725611)
+polygon = PackedVector2Array(0.1154089, -20.441933, 6.8846407, -28.906445, 22.679516, -20.441933, 13.6538725, -11.977418)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.9999998, -11)
+rotation = -0.99052274
+scale = Vector2(0.13461542, 0.12931037)
+texture = ExtResource("2_ligy1")

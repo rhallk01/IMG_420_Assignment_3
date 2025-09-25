@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3fqmk6vc0ma8"]
+
+[ext_resource type="Script" uid="uid://b6ngaqdksqfj0" path="res://scripts/Boid.cs" id="1_3wvxu"]
+[ext_resource type="Texture2D" uid="uid://ckrf17wwb8mmb" path="res://assets/textures/bee_sprite.png" id="2_tbjv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csibm"]
+size = Vector2(1, 0.75)
+
+[node name="Boid" type="CharacterBody2D"]
+script = ExtResource("1_3wvxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.99052274
+scale = Vector2(0.13461542, 0.12931037)
+texture = ExtResource("2_tbjv5")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0.7522936, -1.1904762)
+scale = Vector2(0.055045873, 0.047619045)
+polygon = PackedVector2Array(-50, -17, 40.833336, 4, -4.1052628, 22.78947, -45, 46)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.04267673, 0.051270284)
+polygon = PackedVector2Array(-23.431974, -19.504477, -23.431974, 39.008953, -4.275879, 26.204285, 46.86395, 39.008953, -1.8277588, -9.253326)
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, -0.5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_csibm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 5)
+rect = Rect2(-2, -7, 4, 4)

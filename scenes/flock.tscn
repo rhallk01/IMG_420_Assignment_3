@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://son203isye12"]
+
+[ext_resource type="Script" uid="uid://beavxl3s823ri" path="res://scripts/Flock.cs" id="1_6nse6"]
+[ext_resource type="PackedScene" uid="uid://d3fqmk6vc0ma8" path="res://scenes/Boid.tscn" id="2_cft7a"]
+[ext_resource type="PackedScene" uid="uid://cigm31qipls0l" path="res://scenes/Target.tscn" id="2_qjvon"]
+
+[node name="Flock" type="Node2D"]
+script = ExtResource("1_6nse6")
+BoidScene = ExtResource("2_cft7a")
+
+[node name="Target" parent="." instance=ExtResource("2_qjvon")]
+position = Vector2(2, 10)
