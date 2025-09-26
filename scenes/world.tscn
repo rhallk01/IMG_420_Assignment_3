@@ -61,7 +61,7 @@ position = Vector2(955, 9)
 scale = Vector2(0.6, 0.6)
 
 [node name="Flock" parent="." instance=ExtResource("13_jhx03")]
-position = Vector2(864, -3)
+position = Vector2(858, -3)
 
 [connection signal="game_won" from="Chest" to="." method="_on_chest_game_won"]
 [connection signal="need_key" from="Chest" to="." method="_on_chest_need_key"]
